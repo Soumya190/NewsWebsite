@@ -1,0 +1,55 @@
+/* Base styles for pagination */
+.pagination {
+  margin-top: 20px;
+}
+
+.page-link {
+  cursor: pointer;
+}
+
+.page-item.disabled .page-link {
+  cursor: not-allowed;
+}
+
+/* Media queries for responsive design */
+/* @media (max-width: 576px) {
+  .pagination {
+    flex-wrap: wrap;
+  }
+
+  .page-item {
+    flex: 1 1 auto;
+    text-align: center;
+  }
+
+  .page-link {
+    padding: 0.5rem 0.75rem;
+  }
+}
+
+@media (min-width: 768px) and (max-width: 992px) {
+  .pagination {
+    flex-wrap: nowrap;
+  }
+
+  .page-item {
+    margin: 0 2px;
+  }
+} */
+
+@media (min-width: 992px) {
+  .page-item {
+    margin: 0 5px;
+  }
+
+  .page-link {
+    padding: 0.75rem 1.25rem;
+  }
+}
+
+/* Active page styling */
+.page-item.active .page-link {
+  background-color: #007bff;
+  border-color: #007bff;
+  color: white;
+}
