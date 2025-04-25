@@ -32,14 +32,13 @@ function HomePage() {
           searchResults
         )}&apiKey=${API_key}&pageSize=${pageSize}`;
       } else {
-        url = `https://newsapi.org/v2/top-headlines?country=${country}&apiKey=${API_key}&category=${category}`;
+        url = `https://newsapi.org/v2/top-headlines?apiKey=${API_key}&category=${category}`;
       }
+      console.log("Current category is:", category);
       console.log("Fetching data from URL:", url);
       const response = await axios.get(url);
-      console.log("API Response:", response.data);
+      console.log("API Response:", response.data.articles.length);
       setData(response.data.articles);
-      // setTotalPages(Math.ceil(response.data.totalResults / pageSize));
-      // setTotalPages(totalPages > maxPages ? maxPages : totalPages);
       const totalPages = Math.ceil(response.data.totalResults / pageSize);
       setTotalPages(totalPages > maxPages ? maxPages : totalPages);
       console.log(`Total Results: ${response.data.totalResults}`);
@@ -87,7 +86,7 @@ function HomePage() {
             </div>
           ))}
         </div> */}
-        <NewCard displayedData={displayedData} />
+      <NewCard displayedData={displayedData} />
 
       <Pagination
         currentPage={currentPage}

@@ -8,8 +8,8 @@ function CategoryDropdown({ category, handleCategoryChange }) {
         <Dropdown.Toggle
           variant="success"
           id="dropdown-basic"
-          onChange={(e) => setcategory(e.target.value)}
-          value={category}
+          // onChange={(e) => setcategory(e.target.value)}
+          // value={category}
           className="Dropdown"
         >
           Categories
